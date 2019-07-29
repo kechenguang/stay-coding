@@ -13,4 +13,9 @@ public class TestClass implements Say {
 
         System.out.print("say b");
     }
+
+    public final void sayC(){
+
+        System.out.println("say c");
+    }
 }

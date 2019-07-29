@@ -8,9 +8,10 @@ public class ProxyTest {
         testClass1.sayA();
         testClass1.sayB();
         ProxyFactory factory = new ProxyFactory(testClass1);
-        Say testClass2 = (Say) factory.getProxyInstance();
+        Say testClass2 = (TestClass) factory.getProxyInstance();
         testClass2.sayA();
         testClass2.sayB();
+
     }
 
 }
