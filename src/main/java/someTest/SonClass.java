@@ -2,56 +2,46 @@ package someTest;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.MethodType;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 import static java.lang.invoke.MethodHandles.lookup;
 
 public class SonClass extends FatherClass {
 
-    public static void sayHello() {
-
-        System.out.println("i am son");
-    }
-
-    static abstract class human {
-
-    }
-
-    static class woman extends human {
-
-    }
-
-    static class man extends human {
-
-    }
-
-    public void sayHello(human human) {
-
-        System.out.println("human");
-    }
-
-    public void sayHello(woman woman) {
-
-        System.out.println("woman");
-    }
-
-    public void sayHello(man man) {
+    @Override
+    public void sayHello() {
 
         System.out.println("man");
-    }
-
-    public void print(String a) {
-
-        System.out.println(a);
     }
 
 
     public static void main(String[] args) {
 
-        human man = new man();
+        /*FatherClass fatherClass = new SonClass();
+        SonClass sonClass = new SonClass();
+        fatherClass.sayHello();
+        sonClass.sayHello();*/
+        HashSet<String> s = new HashSet<>();
+        HashMap<String, String> hashMap = new HashMap<>();
+        hashMap.remove("ccc");
+        Hashtable<String, String> stringStringHashtable = new Hashtable<>();
+        stringStringHashtable.put("aaa", "aaa");
+        stringStringHashtable.put("BBB", "NNN");
+        stringStringHashtable.remove("ccc");
+        for (Map.Entry entry : stringStringHashtable.entrySet()) {
+            stringStringHashtable.remove(entry.getKey());
+        }
+        LinkedHashMap<String, String> map = new LinkedHashMap<String, String>(10, 0.75f, true);
+        map.put("aaa", "aaa");
+        map.put("bbb", "bbb");
+        Set<Map.Entry<String, String>> set = map.entrySet();
+        Iterator iterator = set.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+            map.get("aaa");
+        }
+        //stringStringHashtable.put(
+        /*human man = new man();
         human woman = new woman();
         SonClass f = new SonClass();
         FatherClass haha = new FatherClass();
@@ -72,9 +62,10 @@ public class SonClass extends FatherClass {
             e.printStackTrace();
         } catch (Throwable throwable) {
             throwable.printStackTrace();
-        }
+        }*/
      /*  f.sayHello(man);
        f.sayHello(woman);*/
+
     }
 
     public MethodHandle getHadnle(Object obj) throws NoSuchMethodException, IllegalAccessException {

@@ -16,6 +16,8 @@ public class User implements Serializable {
         this.age = age;
         this.location = location;
         this.gender = gender;
+
+        Thread thread = new Thread();
     }
 
     public String getName() {
